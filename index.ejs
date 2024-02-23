@@ -1,0 +1,16 @@
+
+<h1>Product List</h1>
+
+<ul>
+  <% products.forEach(product => { %>
+    <li>
+      <a href="/products/<%= product.id %>"><%= product.name %></a>
+      
+      <form action="/products/<%= product.id %>?_method=DELETE" method="POST" style="display:inline;">
+        <button type="submit">Delete</button>
+      </form>
+    </li>
+  <% }); %>
+</ul>
+
+<a href="/products/new">Add a new product</a>
